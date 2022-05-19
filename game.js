@@ -54,10 +54,45 @@ function playRound(playerSelection, computerSelection) {
      return playerEntry;
  }
 
- for (let i = 0; i < 5; i++){
+function game(){
+    let playerScore;
+    let computerScore;
+    let playerSelection;
+    let computerSelection;
+    let result;
 
-  const playerSelection = playerPlay();
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
-  
+    playerScore = 0;
+    computerScore = 0;
+
+    for (let i = 0; i < 5; i++){
+
+    
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection);
+        console.log(result);
+
+        if (result.substring(0, 8) == "You win!"){
+            playerScore++;
+        } else if (result.substring(0, 8) == "You lose") {
+            computerScore++;
+        }
+    }
+
+    if (playerScore > computerScore){
+        console.log(`You beat the computer ${playerScore} to ${computerScore}!`);
+    } else if (computerScore > playerScore){
+        console.log(`You lost to the computer ${computerScore} to ${playerScore}`);
+    } else {
+        console.log(`You tied with the computer ${playerScore} to ${computerScore}`);
+    }
  }
+
+ game();
+ //for (let i = 0; i < 5; i++){
+//
+ // const playerSelection = playerPlay();
+  //const computerSelection = computerPlay();
+  //console.log(playRound(playerSelection, computerSelection));
+  
+ //}
