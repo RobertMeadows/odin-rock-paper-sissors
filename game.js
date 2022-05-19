@@ -33,9 +33,7 @@ function playRound(playerSelection, computerSelection) {
      let computerSelection;
      
      computerSelection = Math.floor((Math.random()*3)+1);
-     for (let i = 0; i < 5; i++) {
-        console.log(Math.floor((Math.random()*3)+1));
-      }
+     
      switch(computerSelection){
         case 1:
             return "rock";
@@ -55,6 +53,11 @@ function playRound(playerSelection, computerSelection) {
 
      return playerEntry;
  }
+
+ for (let i = 0; i < 5; i++){
+
   const playerSelection = playerPlay();
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
+  
+ }
